@@ -1,7 +1,11 @@
 var express = require('express');
 var app = express();
 var router = require('./routes/index');
+var mongoose = require('mongoose');
 
+// 数据库配置
+mongoose.connect('mongodb://localhost/ad', { useMongoClient: true });
+mongoose.Promise = global.Promise;
 // 静态文件托管
 app.use(express.static('public'));
 
