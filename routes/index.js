@@ -1,4 +1,4 @@
 module.exports = function (app) {
-  app.use('/video')
+  // 路由到video
+  app.use('/video', require('./video'))
 };
-

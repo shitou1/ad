@@ -1,9 +1,12 @@
 var express = require('express');
 var app = express();
+var router = require('./routes/index');
 
-app.get('/', function (req, res) {
-    res.send('Hello World!');
-});
+// 静态文件托管
+app.use(express.static('public'));
+
+// 路由
+router(app);
 
 var server = app.listen(3000, function () {
     var host = server.address().address;
