@@ -1,0 +1,149 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>oio</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="header">
+    <div class="container">
+        <div class="nav">
+            <a href="#">电影</a>
+            <a href="#">音乐</a>
+            <a href="#">图书</a>
+            <a href="#">软件</a>
+            <a href="#">其它</a>
+        </div>
+    </div>
+</div>
+<div class="main">
+    <div class="container">
+        <div class="banner">
+            <img src="img/banner.jpg" alt="" height="177">
+            <div class="description">
+                Reveal Animations When You Scroll. Very Animate.css Friend :-)
+                <br>
+                Easily customize animation settings: style, delay, length, offset, iterations...
+            </div>
+        </div>
+        <div class="content">
+            <div class="card">
+                <div class="cell">
+                    <img src="img/shifu.jpg" alt="">
+                </div>
+            </div>
+            <div class="card">
+                <div class="cell">
+                    <img src="img/shifu.jpg" alt="">
+                </div>
+            </div>
+            <div class="card">
+                <div class="cell">
+                    <img src="img/shifu.jpg" alt="">
+                </div>
+            </div>
+            <div class="card">
+                <div class="cell">
+                    <img src="img/shifu.jpg" alt="">
+                </div>
+            </div>
+            <div class="card">
+                <div class="cell">
+                    <img src="img/shifu.jpg" alt="">
+                </div>
+            </div>
+            <div class="card">
+                <div class="cell">
+                    <img src="img/shifu.jpg" alt="">
+                </div>
+            </div>
+            <div class="card">
+                <div class="cell">
+                    <img src="img/shifu.jpg" alt="">
+                </div>
+            </div>
+            <div class="card">
+                <div class="cell">
+                    <img src="img/shifu.jpg" alt="">
+                </div>
+            </div>
+            <div class="card">
+                <div class="cell">
+                    <img src="img/shifu.jpg" alt="">
+                </div>
+            </div>
+            <div class="card">
+                <div class="cell">
+                    <img src="img/shifu.jpg" alt="">
+                </div>
+            </div>
+            <div class="card">
+                <div class="cell">
+                    <img src="img/shifu.jpg" alt="">
+                </div>
+            </div>
+            <div class="card">
+                <div class="cell">
+                    <img src="img/shifu.jpg" alt="">
+                </div>
+            </div>
+            <div class="card">
+                <div class="cell">
+                    <img src="img/shifu.jpg" alt="">
+                </div>
+            </div>
+        </div>
+        <div class="loader">
+            <div class="ball-spin-fade-loader">
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="footer">
+    <div class="container">
+        <div>本网站提供的最新电视剧和电影资源均系收集于各大视频网站，本网站只提供web页面服务，并不提供影片资源存储，也不参与录制、上传。</div>
+        <div>若本站收录的节目无意侵犯了贵司版权，请联系我们，2399986399#qq.com（#换成@）我们会及时处理和回复，谢谢</div>
+        <div>Copyright © 2015-2016|追美剧网|美剧影院|美剧爱好者的聚集地！ 鄂ICP备15021527号-1 | 站长统计-当前在线[54]</div>
+    </div>
+</div>
+<script src="js/jquery-3.2.1.min.js"></script>
+<script>
+    $(function () {
+        regEvent();
+    });
+
+    // 注册事件
+    function regEvent() {
+        scrollLoad();
+    }
+
+    // 滚动加载
+    function scrollLoad() {
+        $(window).scroll((function () {
+            var loading = false;
+            return function () {
+                if ((($(window).scrollTop() + $(window).height()) + 250) >= $(document).height()) {
+                    if (!loading) {
+                        loading = true;
+                        $('.loader .ball-spin-fade-loader').show();
+                        $.ajax({url: ''}).catch(function (e) {
+                            loading = false;
+                            debugger;
+                        });
+                    }
+                }
+            }
+        }()));
+    }
+</script>
+</body>
+</html>
