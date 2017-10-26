@@ -6,7 +6,7 @@ router.get('/', function (req, res) {
     var video = new Video({title: 'wly', author: 'shitou'});
     video.save(function (err) {
         if (!err) {
-            res.send('success')
+            res.render('index.ejs')
         }
     })
 });
