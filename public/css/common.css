@@ -5,6 +5,9 @@
   background: #84acb5;
   color: #fff;
 }
+:focus {
+  outline: none;
+}
 .clearfix:before,
 .clearfix:after {
   content: " ";
@@ -50,7 +53,7 @@ p {
   font: 600 30px/30px "Comic Sans MS", arial, sans-serif;
   display: inline-block;
   font-size: 31px;
-  color: #5cc5bd;
+  color: #e05e53;
   line-height: 40px;
   padding: 7px 50px 9px 0;
 }
@@ -63,7 +66,7 @@ p {
   color: #888;
 }
 .header .container .left_part .nav a.active {
-  color: #5cc5bd;
+  color: #e05e53;
 }
 .header .container .right_part {
   float: right;
@@ -82,7 +85,7 @@ p {
   float: left;
   width: 182px;
   height: 30px;
-  border: 1px solid #5AB7AF;
+  border: 1px solid #e05e53;
   border-radius: 2px 0 0 2px;
 }
 .header .container .right_part .search_box .search_btn {
@@ -90,8 +93,8 @@ p {
   display: block;
   width: 38px;
   height: 30px;
-  background: #5AB7AF;
-  border: 1px solid #5AB7AF;
+  background: #e05e53;
+  border: 1px solid #e05e53;
   float: left;
   border-radius: 0 2px 2px 0;
 }

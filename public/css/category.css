@@ -87,6 +87,9 @@
 .main .cards_list .card .card_content .card_title a {
   font-size: 14px;
 }
+.main .cards_list .card .card_content .card_title a:hover {
+  color: #e05e53;
+}
 .main .cards_list .card .card_content .card_title .state {
   display: inline-block;
   font-weight: bold;
@@ -115,3 +118,33 @@
   margin-top: 17px;
   vertical-align: bottom;
 }
+/*paginator start*/
+.paginator {
+  list-style-type: none;
+  padding: 12px;
+  text-align: center;
+}
+.paginator > li {
+  display: inline-block;
+}
+.paginator > li > a {
+  margin-right: 5px;
+  border-radius: 2px;
+  background: #fff;
+  color: #333;
+  font-size: 14px;
+  border-color: #ccc;
+  padding: 4px 12px;
+}
+.paginator > .active > a,
+.paginator > .active > a:hover,
+.paginator > .active > a:focus {
+  color: #fff;
+  background: #e05e53;
+  border-color: #e05e53;
+}
+.paginator > li.disabled > a {
+  color: #999;
+  cursor: not-allowed;
+}
+/*paginator end*/
