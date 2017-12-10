@@ -1,0 +1,65 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>口琴坊-分类</title>
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/category.css">
+    <script src="js/jquery-3.2.1.min.js"></script>
+    <script src="js/common.js"></script>
+</head>
+<body>
+<%- include("./common/header.ejs") %>
+
+<div class="main">
+    <div class="category_nav">
+
+        <div class="category_row">
+            <div class="cate_row_l">
+                类目
+            </div>
+            <div class="cate_row_r">
+                <a class="active" href="javascript:void(0)" onclick="_search({type:''})">全部</a>
+                <a href="javascript:void(0)" onclick="_search({type:'tv'})">电视剧</a>
+                <a href="javascript:void(0)" onclick="_search({type:'movie'})">电影</a>
+                <a href="javascript:void(0)" onclick="_search({type:'animation'})">动漫</a>
+            </div>
+        </div>
+
+        <div class="category_row">
+            <div class="cate_row_l">
+                状态
+            </div>
+            <div class="cate_row_r">
+                <a class="active" href="javascript:void(0)" onclick="_search({state:''})">全部</a>
+                <a href="javascript:void(0)" onclick="_search({state:'0'})">连载</a>
+                <a href="javascript:void(0)" onclick="_search({state:'1'})">完结</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="cards_list clearfix">
+        <div class="card">
+            <div class="card_img">
+                <a href="" target="_blank">
+                    <img src="http://img.neets.cc/video/0a08b7a2cd1449b0811a79518e202612/large.jpg" onerror="onError(this)">
+                </a>
+            </div>
+            <div class="card_content">
+                <div class="card_title">
+                    <a href="/detail/0a08b7a2cd1449b0811a79518e202612" target="_blank">超级少女 第三季</a>
+                    <span class="state">&#9835;</span>
+                </div>
+                <div class="card_message">
+                    最美不是下雨天
+                </div>
+                <div class="card_date">2017.12.10</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<%- include("./common/footer.ejs") %>
+
+</body>
+</html>

@@ -1,161 +1,230 @@
-body {
-  margin: 0;
+.main .banner {
+  margin-top: 56px;
+  margin-bottom: 25px;
+  width: 100%;
+  height: 265px;
+  background: url('../img/450513638771987134.jpg');
+  box-sizing: border-box;
+  position: relative;
 }
-a {
-  color: #000;
-  text-decoration: none;
+.main .banner .banner_content {
+  text-align: center;
+  padding-top: 60px;
 }
-img {
-  vertical-align: top;
-}
-.container {
-  width: 680px;
+.main .banner .banner_content .title {
+  width: 429px;
+  height: 38px;
+  display: block;
   margin: 0 auto;
 }
-.header {
-  height: 48px;
+.main .banner .banner_content .banner_nav {
+  margin-top: 35px;
+  font-size: 17px;
 }
-.header .nav {
-  height: 24px;
-  line-height: 24px;
-  font-size: 12px;
-  padding-top: 24px;
-  text-align: justify;
-}
-.header .nav a {
+.main .banner .banner_content .banner_nav a {
   display: inline-block;
-  color: #7a7a7a;
+  margin: 0 10px;
+  color: #fff;
 }
-.header .nav:after {
-  width: 100%;
-  height: 0;
-  margin: 0;
-  display: inline-block;
+.main .banner .banner_content .banner_search {
+  width: 440px;
+  margin: 15px auto 0;
+  position: relative;
   overflow: hidden;
-  content: '';
-}
-.main {
-  position: fixed;
-  bottom: 86px;
-  top: 48px;
-  width: 100%;
-}
-.main .content {
-  position: relative;
-}
-.main .content .searchBox {
-  position: relative;
-  background-color: #fff;
-  height: 34px;
-  width: 648px;
-  vertical-align: top;
-  padding: 5px 9px;
-  margin: 30px auto;
-  border-radius: 2px;
-  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.16), 0 0 0 1px rgba(0, 0, 0, 0.08);
-  transition: box-shadow 200ms cubic-bezier(0.4, 0, 0.2, 1);
-}
-.main .content .searchBox .searchContent {
-  text-indent: 10px;
-  border: none;
-  padding: 0;
-  margin: 0;
-  height: 34px;
-  width: 100%;
-  position: absolute;
-  left: 0;
-  outline: none;
-  font: 16px arial, sans-serif;
-  line-height: 34px;
-}
-.main .content .searchBox .searchBtn {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  right: 0;
-  color: #7a7a7a;
-  font-size: 24px;
-  cursor: pointer;
-  width: 44px;
-  padding: 0 8px;
-  text-align: center;
-  line-height: 44px;
-  border-left: 1px solid rgba(0, 0, 0, 0.08);
-}
-.main .content .searchBox .searchBtn:hover {
-  background-color: #fafafa;
-}
-.main .content .searchBox.active {
-  box-shadow: 0 3px 8px 0 rgba(0, 0, 0, 0.2), 0 0 0 1px rgba(0, 0, 0, 0.08);
-}
-.main .content .cardList {
-  font-size: 0;
-  height: 272px;
-  line-height: 144px;
-  margin: 4px 0 8px 0;
-  position: absolute;
-  text-align: center;
-}
-.main .content .cardList .card {
-  background-color: #fafafa;
-  border-radius: 2px;
   box-sizing: border-box;
+  font-size: 15px;
+}
+.main .banner .banner_content .banner_search .search_content {
+  width: 384px;
+  height: 40px;
+  padding-left: 15px;
+  font-size: 14px;
+  color: #999;
+  border: 1px solid #5cc5bd;
+  border-radius: 3px 0 0 3px;
+  float: left;
+  background: #fff;
+}
+.main .banner .banner_content .banner_search .search_btn {
+  position: absolute;
+  width: 56px;
+  height: 40px;
+  background: #5cc5bd;
+  right: 0;
+  top: 0;
+  border: 1px solid #5cc5bd;
+  border-radius: 0 3px 3px 0;
+  float: left;
+}
+.main .banner .banner_content .banner_search .search_btn div {
+  width: 20px;
+  height: 20px;
+  margin: 10px auto;
+  display: block;
+  background: url('../img/icon.png') -80px -270px;
+}
+.main .panel {
+  width: 980px;
+  box-sizing: border-box;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+  background: #fff;
+  margin: 0 auto 20px;
+  border-radius: 3px;
+}
+.main .panel .title {
+  width: 100%;
+  height: 35px;
+  line-height: 35px;
+  border-bottom: 1px solid #DEDEDE;
+  padding: 0 16px;
+  box-sizing: border-box;
+  font-size: 15px;
+  font-weight: bold;
+}
+.main .panel .title .nav {
+  float: right;
+}
+.main .panel .title .nav .recommend {
+  display: block;
+  float: right;
+  font-size: 13px;
+  color: #3F7CC1;
+  font-weight: normal;
+}
+.main .panel .title .nav .recommend:hover {
+  color: #23527c;
+}
+.main .panel .title .nav .recommend .recommend_more {
+  width: 14px;
+  height: 14px;
+  background: url('../img/icon.png') -10px -270px;
+  vertical-align: middle;
   display: inline-block;
-  font-family: arial, sans-serif;
-  font-size: 12px;
-  height: 128px;
-  line-height: 100%;
-  margin: 0 8px;
-  opacity: 1;
+  position: relative;
+  top: -2px;
+}
+.main .panel .title .nav a {
+  display: inline-block;
+  line-height: 30px;
+  padding: 0 10px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #888;
+}
+.main .panel .title .nav a.active {
+  color: #e05e53;
+  border-bottom: 2px solid #e05e53;
+}
+.main .panel .content {
+  padding: 12px 15px;
+}
+.main .panel .content .recommend iframe {
+  vertical-align: middle;
+}
+.main .panel .content .recommend .daily_message {
+  display: inline-block;
+  padding-top: 20px;
+  color: #888;
+}
+.main .panel .content .card {
+  height: 100px;
+  width: 25%;
+  float: left;
+  margin-bottom: 18px;
+  box-sizing: border-box;
+}
+.main .panel .content .card.card_more {
+  line-height: 100px;
+  background: #F4F5F6;
+  text-align: center;
+  font-size: 15px;
+  border-radius: 2px;
+}
+.main .panel .content .card.card_more a {
+  color: #3F7CC1;
+}
+.main .panel .content .card.card_more a:hover {
+  color: #23527c;
+}
+.main .panel .content .card.card_more a b {
+  display: inline-block;
+  width: 17px;
+  height: 17px;
+  vertical-align: middle;
+  position: relative;
+  top: -2px;
+  background: url('../img/icon.png') -150px -270px;
+}
+.main .panel .content .card .img {
+  float: left;
+  height: 100%;
+  width: 75px;
+  border-radius: 2px;
   overflow: hidden;
   position: relative;
-  vertical-align: top;
-  white-space: nowrap;
-  width: 154px;
-  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.16), 0 0 0 1px rgba(0, 0, 0, 0.08);
-  cursor: pointer;
-  transition-duration: 200ms;
-  transition-property: transform, box-shadow, margin, opacity, width;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition: all 0.25s ease;
 }
-.main .content .cardList .card .title {
-  height: 15px;
-  left: 31px;
-  line-height: 14px;
-  overflow: hidden;
-  padding: 0;
+.main .panel .content .card .img:hover {
+  transform: scale(1.08);
+}
+.main .panel .content .card .img img {
+  width: auto;
+  min-width: 100%;
+  height: 100%;
+  border-radius: 3px;
   position: absolute;
-  text-overflow: ellipsis;
-  top: 9px;
-  width: 120px;
-  color: #323232;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
-.main .content .cardList .card .img {
-  cursor: pointer;
-  display: block;
-  height: 96px;
-  overflow: hidden;
-  position: absolute;
-  top: 32px;
-  width: 154px;
-  background-color: #f5f5f5;
-}
-.main .content .cardList .card .img img {
+.main .panel .content .card .desc {
+  width: 130px;
+  float: left;
+  margin-left: 10px;
+  position: relative;
   height: 100%;
 }
-.main .content .cardList .card .img:after {
-  border: 8px solid #d7d7d7;
-  border-radius: 50%;
-  content: '';
-  display: block;
-  height: 0;
-  margin: 39px 66px;
-  width: 0;
+.main .panel .content .card .desc .title {
+  font-size: 14px;
+  font-weight: normal;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  padding: 6px 0 0;
+  line-height: 19px;
+  height: 25px;
+  max-height: 42px;
+  border: none;
 }
-.main .content .cardList .card:hover:not(:active) {
-  box-shadow: 0 3px 8px 0 rgba(0, 0, 0, 0.2), 0 0 0 1px rgba(0, 0, 0, 0.08);
+.main .panel .content .card .desc .title a:hover {
+  color: #e05e53;
 }
-.main .content .cardList .card:active {
-  -webkit-filter: brightness(88%);
-  box-shadow: 0 3px 8px 0 rgba(0, 0, 0, 0.2), 0 0 0 1px rgba(0, 0, 0, 0.12);
+.main .panel .content .card .desc .state {
+  display: inline-block;
+  font-weight: bold;
+  font-size: 18px;
+  color: #e05e53;
+}
+.main .panel .content .card .desc .state.inactive {
+  display: none;
+}
+.main .panel .content .card .desc .message {
+  color: #888;
+  font-size: 12px;
+  overflow: hidden;
+  margin-top: 3px;
+}
+.main .panel .content .card .desc .subcriber {
+  position: absolute;
+  bottom: 6px;
+  left: 0;
+  font-size: 0;
+  cursor: pointer;
+  overflow: hidden;
+}
+.main .panel .content .card .desc .subcriber .sub_date {
+  float: left;
+  height: 100%;
+  line-height: 1;
+  font-size: 12px;
+  color: #888;
 }

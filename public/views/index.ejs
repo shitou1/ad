@@ -2,97 +2,321 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>oio</title>
-    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <title>口琴坊</title>
+    <link rel="stylesheet" href="css/common.css">
     <link rel="stylesheet" href="css/style.css">
     <script src="js/jquery-3.2.1.min.js"></script>
 </head>
 <body>
-<div class="header">
-    <div class="container">
-        <div class="nav">
-            <a href="#">电影</a>
-            <a href="#">音乐</a>
-            <a href="#">图书</a>
-            <a href="#">软件</a>
-            <a href="#">其它</a>
-        </div>
-    </div>
-</div>
+<%- include("./common/header.ejs") %>
+
 <div class="main">
-    <div class="container">
-        <div class="content">
-            <div class="searchBox">
-                <input type="text" class="searchContent">
-                <i class="fa fa-search searchBtn"></i>
+    <div class="banner">
+        <div class="banner_content">
+            <div class="title">
+                <img src="img/tit.png">
             </div>
-            
-            <div class="cardList">
-                <a class="card" href="">
-                    <div class="title">秀秀的铁拳</div>
-                    <div class="img">
-                        
-                    </div>
+            <div class="banner_nav">
+                <a href="/">美剧</a>
+                <a href="/">日剧</a>
+                <a href="/">韩剧</a>
+                <a href="/">动漫</a>
+                <a href="/">国产剧</a>
+                <a href="/">全部</a>
+            </div>
+            <div class="banner_search">
+                <input type="text" id="search_content" class="search_content" placeholder="搜一下试试吧 (=^ ^=)">
+                <a href="javascript:void(0)" onclick="_searchBtnClick(this)" class="search_btn">
+                    <div></div>
                 </a>
-                <a class="card" href="">
-                    <div class="title">秀秀的铁拳</div>
-                    <div class="img">
+            </div>
+        </div>
+    </div>
 
-                    </div>
+    <div class="panel clearfix">
+        <div class="title">
+            今日推荐
+            <div class="nav">
+                <a class="recommend" href="/">
+                    查看全部
+                    <div class="recommend_more"></div>
                 </a>
-                <a class="card" href="">
-                    <div class="title">秀秀的铁拳</div>
-                    <div class="img">
+            </div>
+        </div>
+        <div class="content">
+            <div class="recommend">
+                <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=474968866&auto=1&height=66"></iframe>
+                <p class="daily_message">
+                    最美不是下雨天，是与你一起躲过雨的屋檐 ٩(๑❛ᴗ❛๑)۶
+                </p>
+            </div>
+        </div>
+    </div>
 
+    <div class="panel clearfix">
+        <div class="title">
+            音乐盒
+            <div class="nav">
+                <a href="/" class="active">全部</a>
+                <a href="/">美剧</a>
+                <a href="/">日剧</a>
+                <a href="/">韩剧</a>
+                <a href="/">动漫</a>
+                <a href="/">有bgm</a>
+                <a href="/">无bgm</a>
+            </div>
+        </div>
+        <div class="content">
+            <div class="card">
+                <div class="img">
+                    <a href="" target="_blank">
+                        <img src="http://img.neets.cc/video/ae603bd8b62d4fe4a1867d67c1f0e748/large.jpg">
+                    </a>
+                </div>
+                <div class="desc">
+                    <div class="title">
+                        <a href="/" target="_blank" title="缺少bgm，欢迎补全">触不可及</a>
+                        <span class="state">&#9835;</span>
                     </div>
-                </a>
-                <a class="card" href="">
-                    <div class="title">秀秀的铁拳</div>
-                    <div class="img">
-
+                    <div class="message">最美不是下雨天，是与你一起躲过雨的屋檐 ٩(๑❛ᴗ❛๑)۶</div>
+                    <div class="subcriber">
+                        <div class="sub_date">2017.12.9</div>
                     </div>
-                </a>
-                <a class="card" href="">
-                    <div class="title">秀秀的铁拳</div>
-                    <div class="img">
-
+                </div>
+            </div>
+            <div class="card">
+                <div class="img">
+                    <a href="" target="_blank">
+                        <img src="http://img.neets.cc/video/ae603bd8b62d4fe4a1867d67c1f0e748/large.jpg">
+                    </a>
+                </div>
+                <div class="desc">
+                    <div class="title">
+                        <a href="/" target="_blank" title="缺少bgm，欢迎补全">触不可及</a>
+                        <span class="state">&#9835;</span>
                     </div>
-                </a>
-                <a class="card" href="">
-                    <div class="title">秀秀的铁拳</div>
-                    <div class="img">
-
+                    <div class="subcriber">
+                        <div class="sub_date">2017.12.9</div>
                     </div>
-                </a>
-                <a class="card" href="">
-                    <div class="title">秀秀的铁拳</div>
-                    <div class="img">
-
+                </div>
+            </div>
+            <div class="card">
+                <div class="img">
+                    <a href="" target="_blank">
+                        <img src="http://img.neets.cc/video/ae603bd8b62d4fe4a1867d67c1f0e748/large.jpg">
+                    </a>
+                </div>
+                <div class="desc">
+                    <div class="title">
+                        <a href="/" target="_blank" title="缺少bgm，欢迎补全">触不可及</a>
+                        <span class="state">&#9835;</span>
                     </div>
-                </a>
-                <a class="card" href="">
-                    <div class="title">秀秀的铁拳</div>
-                    <div class="img">
-
+                    <div class="subcriber">
+                        <div class="sub_date">2017.12.9</div>
                     </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="img">
+                    <a href="" target="_blank">
+                        <img src="http://img.neets.cc/video/ae603bd8b62d4fe4a1867d67c1f0e748/large.jpg">
+                    </a>
+                </div>
+                <div class="desc">
+                    <div class="title">
+                        <a href="/" target="_blank" title="缺少bgm，欢迎补全">触不可及</a>
+                        <span class="state">&#9835;</span>
+                    </div>
+                    <div class="subcriber">
+                        <div class="sub_date">2017.12.9</div>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="img">
+                    <a href="" target="_blank">
+                        <img src="http://img.neets.cc/video/ae603bd8b62d4fe4a1867d67c1f0e748/large.jpg">
+                    </a>
+                </div>
+                <div class="desc">
+                    <div class="title">
+                        <a href="/" target="_blank" title="缺少bgm，欢迎补全">触不可及</a>
+                        <span class="state">&#9835;</span>
+                    </div>
+                    <div class="subcriber">
+                        <div class="sub_date">2017.12.9</div>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="img">
+                    <a href="" target="_blank">
+                        <img src="http://img.neets.cc/video/ae603bd8b62d4fe4a1867d67c1f0e748/large.jpg">
+                    </a>
+                </div>
+                <div class="desc">
+                    <div class="title">
+                        <a href="/" target="_blank" title="缺少bgm，欢迎补全">触不可及</a>
+                        <span class="state">&#9835;</span>
+                    </div>
+                    <div class="subcriber">
+                        <div class="sub_date">2017.12.9</div>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="img">
+                    <a href="" target="_blank">
+                        <img src="http://img.neets.cc/video/ae603bd8b62d4fe4a1867d67c1f0e748/large.jpg">
+                    </a>
+                </div>
+                <div class="desc">
+                    <div class="title">
+                        <a href="/" target="_blank" title="缺少bgm，欢迎补全">触不可及</a>
+                        <span class="state">&#9835;</span>
+                    </div>
+                    <div class="subcriber">
+                        <div class="sub_date">2017.12.9</div>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="img">
+                    <a href="" target="_blank">
+                        <img src="http://img.neets.cc/video/ae603bd8b62d4fe4a1867d67c1f0e748/large.jpg">
+                    </a>
+                </div>
+                <div class="desc">
+                    <div class="title">
+                        <a href="/" target="_blank" title="缺少bgm，欢迎补全">触不可及</a>
+                        <span class="state">&#9835;</span>
+                    </div>
+                    <div class="subcriber">
+                        <div class="sub_date">2017.12.9</div>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="img">
+                    <a href="" target="_blank">
+                        <img src="http://img.neets.cc/video/ae603bd8b62d4fe4a1867d67c1f0e748/large.jpg">
+                    </a>
+                </div>
+                <div class="desc">
+                    <div class="title">
+                        <a href="/" target="_blank" title="缺少bgm，欢迎补全">触不可及</a>
+                        <span class="state">&#9835;</span>
+                    </div>
+                    <div class="subcriber">
+                        <div class="sub_date">2017.12.9</div>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="img">
+                    <a href="" target="_blank">
+                        <img src="http://img.neets.cc/video/ae603bd8b62d4fe4a1867d67c1f0e748/large.jpg">
+                    </a>
+                </div>
+                <div class="desc">
+                    <div class="title">
+                        <a href="/" target="_blank" title="缺少bgm，欢迎补全">触不可及</a>
+                        <span class="state">&#9835;</span>
+                    </div>
+                    <div class="subcriber">
+                        <div class="sub_date">2017.12.9</div>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="img">
+                    <a href="" target="_blank">
+                        <img src="http://img.neets.cc/video/ae603bd8b62d4fe4a1867d67c1f0e748/large.jpg">
+                    </a>
+                </div>
+                <div class="desc">
+                    <div class="title">
+                        <a href="/" target="_blank" title="缺少bgm，欢迎补全">触不可及</a>
+                        <span class="state">&#9835;</span>
+                    </div>
+                    <div class="subcriber">
+                        <div class="sub_date">2017.12.9</div>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="img">
+                    <a href="" target="_blank">
+                        <img src="http://img.neets.cc/video/ae603bd8b62d4fe4a1867d67c1f0e748/large.jpg">
+                    </a>
+                </div>
+                <div class="desc">
+                    <div class="title">
+                        <a href="/" target="_blank" title="缺少bgm，欢迎补全">触不可及</a>
+                        <span class="state">&#9835;</span>
+                    </div>
+                    <div class="subcriber">
+                        <div class="sub_date">2017.12.9</div>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="img">
+                    <a href="" target="_blank">
+                        <img src="http://img.neets.cc/video/ae603bd8b62d4fe4a1867d67c1f0e748/large.jpg">
+                    </a>
+                </div>
+                <div class="desc">
+                    <div class="title">
+                        <a href="/" target="_blank" title="缺少bgm，欢迎补全">触不可及</a>
+                        <span class="state">&#9835;</span>
+                    </div>
+                    <div class="subcriber">
+                        <div class="sub_date">2017.12.9</div>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="img">
+                    <a href="" target="_blank">
+                        <img src="http://img.neets.cc/video/ae603bd8b62d4fe4a1867d67c1f0e748/large.jpg">
+                    </a>
+                </div>
+                <div class="desc">
+                    <div class="title">
+                        <a href="/" target="_blank" title="缺少bgm，欢迎补全">触不可及</a>
+                        <span class="state">&#9835;</span>
+                    </div>
+                    <div class="subcriber">
+                        <div class="sub_date">2017.12.9</div>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="img">
+                    <a href="" target="_blank">
+                        <img src="http://img.neets.cc/video/ae603bd8b62d4fe4a1867d67c1f0e748/large.jpg">
+                    </a>
+                </div>
+                <div class="desc">
+                    <div class="title">
+                        <a href="/" target="_blank" title="缺少bgm，欢迎补全">触不可及</a>
+                        <span class="state">&#9835;</span>
+                    </div>
+                    <div class="subcriber">
+                        <div class="sub_date">2017.12.9</div>
+                    </div>
+                </div>
+            </div>
+            <div class="card card_more">
+                <a href="/">
+                    全部212条<b></b>
                 </a>
             </div>
         </div>
     </div>
 </div>
 
-<script>
-    $(function () {
-        $('.searchContent').on('focus mouseenter', function () {
-            $(this).parent('.searchBox').addClass('active')
-        }).on('blur', function () {
-            $(this).parent('.searchBox').removeClass('active')
-        }).on('mouseleave', function () {
-            if (!$(this).is(':focus')) {
-                $(this).parent('.searchBox').removeClass('active')
-            }
-        })
-    });
-</script>
+<%- include("./common/footer.ejs") %>
 </body>
 </html>

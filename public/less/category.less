@@ -1,0 +1,140 @@
+@import "variable";
+
+.main {
+  .category_nav {
+    width: 980px;
+    margin: 81px auto 0;
+    padding: 4px 30px 16px 30px;
+    background: #fff;
+    border-radius: 3px;
+    font-size: 0;
+    color: #888;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+
+    .category_row {
+      .cate_row_l {
+        font-size: 14px;
+        width: 50px;
+        display: inline-block;
+      }
+
+      .cate_row_r {
+        width: 865px;
+        font-size: 14px;
+        display: inline-block;
+        border-bottom: 1px dashed #DEDEDE;
+
+        a {
+          display: inline-block;
+          padding: 12px 14px 8px 14px;
+          color: #888;
+
+          &.active {
+            color: @active-color;
+          }
+        }
+      }
+    }
+  }
+
+  .cards_list {
+    width: 980px;
+    margin: 20px auto 0;
+
+    .card {
+      border-radius: 3px;
+      box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+      width: 300px;
+      height: 138px;
+      float: left;
+      margin-left: 20px;
+      background: #fff;
+      margin-bottom: 25px;
+
+      .card_img {
+        width: 105px;
+        height: 100%;
+        float: left;
+        position: relative;
+
+        a {
+          transition: all 0.25s ease;
+          display: block;
+          position: absolute;
+          bottom: 0;
+          width: 100%;
+          height: 100%;
+          overflow: hidden;
+          border-radius: 2px;
+          box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+
+          &:hover {
+            transform: scale(1.08);
+          }
+
+          img {
+            width: auto;
+            height: 100%;
+            border-radius: 3px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+          }
+        }
+      }
+
+      .card_content {
+        width: 195px;
+        float: left;
+        height: 100%;
+        padding: 0 12px;
+        position: relative;
+
+        .card_title {
+          white-space: nowrap;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          margin-top: 12px;
+          line-height: 19px;
+
+          a {
+            font-size: 14px;
+          }
+
+          .state {
+            display: inline-block;
+            font-weight: bold;
+            font-size: 18px;
+            color: @active-color;
+
+            &.inactive {
+              display: none;
+            }
+          }
+        }
+
+        .card_message {
+          font-size: 13px;
+          color: #888888;
+          line-height: 19px;
+          padding-top: 5px;
+          border-top: 1px dashed #DEDEDE;
+          margin-top: 6px;
+        }
+
+        .card_date {
+          display: inline-block;
+          font-size: 12px;
+          color: #888;
+          position: absolute;
+          bottom: 12px;
+          overflow: hidden;
+          cursor: pointer;
+          margin-top: 17px;
+          vertical-align: bottom;
+        }
+      }
+    }
+  }
+}
