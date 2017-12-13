@@ -1,0 +1,180 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>登录 && 注册</title>
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/inventory.css">
+    <script src="js/jquery-3.2.1.min.js"></script>
+</head>
+<body>
+<%- include("./common/header.ejs") %>
+
+<div class="main clearfix">
+    <div class="nav">
+        <a class="my_collection active" href="/subcriberlist">
+            <div class="icon"></div>
+            <span>我的订阅</span>
+        </a>
+        <a class="my_share" href="/watchedlist">
+            <div class="icon"></div>
+            <span>我的分享</span>
+        </a>
+    </div>
+    <div class="content">
+        <div class="header">
+            <div class="bg">
+                <div class="header_title">我的清单</div>
+            </div>
+            <div class="icon">
+                <div class="icon_box">
+                    <div class="icon_mask"></div>
+                    <img src="img/img_user_bg.png">
+                    <div class="icon_logo"></div>
+                </div>
+            </div>
+            <div class="user">
+                <div class="avatar">
+                    <img src="img/unlogin.png" alt="">
+                </div>
+                <span class="user_name">未登录</span>
+                </span>
+            </div>
+        </div>
+
+        <div class="panel clearfix">
+            <div class="card_list">
+                <div class="list_header">
+                    <span class="list_title">0条记录</span>
+                    <a href="" class="inventory_btn">
+                        去订阅
+                        <div class="inventory_icon"></div>
+                    </a>
+                </div>
+                <div class="list_content">
+                    <form class="form_login deactive">
+                        <div class="form_row">
+                            <label>用户名</label>
+                            <input type="text" name="name">
+                        </div>
+                        <div class="form_row">
+                            <label>密码</label>
+                            <input type="password" name="password">
+                        </div>
+                        <div class="form_row">
+                            <label></label>
+                            <button class="form_submit">登录</button>
+                        </div>
+                    </form>
+                    <form class="form_register">
+                        <div class="form_row">
+                            <label>用户名</label>
+                            <input type="text" name="name">
+                        </div>
+                        <div class="form_row">
+                            <label>密码</label>
+                            <input type="password" name="password">
+                        </div>
+                        <div class="form_row">
+                            <label>邮箱</label>
+                            <input type="text" name="email">
+                        </div>
+                        <div class="form_row">
+                            <label>完成验证</label>
+                            <div id="captcha" class="form_captcha">
+                                <p id="wait" class="show">正在加载验证码......</p>
+                            </div>
+                        </div>
+                        <div class="form_row">
+                            <label></label>
+                            <button class="form_submit" id="btn" type="button">注册</button>
+                        </div>
+                    </form>
+                </div>
+                <div class="list_footer">
+                    <a href="" class="forget_pwd">找回密码</a>
+                    <a href="" class="go_register">去注册 <b></b></a>
+                </div>
+            </div>
+
+            <div class="recommend">
+                <div class="recommend_header">
+                    最新推荐
+                    <a class="recommend_more" href="/category">
+                        更多
+                        <div class="recommend_icon"></div>
+                    </a>
+                </div>
+                <div class="recommend_content clearfix">
+                    <div class="recommend_card">
+                        <div class="recommend_img">
+                            <a href="/detail/fcbbcf3e9d9840bebcef131187d17960" target="_blank" rel="noreferrer">
+                                <img src="http://img.neets.cc/video/fcbbcf3e9d9840bebcef131187d17960/large.jpg" onerror="onError(this)">
+                            </a>
+                        </div>
+                        <div class="recommend_desc">
+                            <a class="recommend_desc_title" href="/detail/fcbbcf3e9d9840bebcef131187d17960" target="_blank" rel="noreferrer">卡片战斗先导者 GZ</a>
+                            <div class="recommend_desc_word">当你订阅的剧集更新时，你会在此看到它</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="js/gt.js"></script>
+<script>
+    var handler = function (captchaObj) {
+        captchaObj.appendTo('#captcha');
+        captchaObj.onReady(function () {
+            $("#wait").hide();
+        });
+        $('#btn').click(function () {
+            var result = captchaObj.getValidate();
+            if (!result) {
+                return alert('请完成验证');
+            }
+            $.ajax({
+                url: '/login/gt/validate-click',
+                type: 'POST',
+                dataType: 'json',
+                data: {
+                    username: 'shitou',
+                    password: '123456',
+                    geetest_challenge: result.geetest_challenge,
+                    geetest_validate: result.geetest_validate,
+                    geetest_seccode: result.geetest_seccode
+                },
+                success: function (data) {
+                    if (data.status === 'success') {
+                        alert('登录成功');
+                    } else if (data.status === 'fail') {
+                        alert('登录失败，请完成验证');
+                        captchaObj.reset();
+                    }
+                }
+            });
+        })
+    };
+
+    $.ajax({
+        url: "/login/gt/register-click?t=" + (new Date()).getTime(), // 加随机数防止缓存
+        type: "get",
+        dataType: "json",
+        success: function (data) {
+            initGeetest({
+                gt: data.gt,
+                challenge: data.challenge,
+                offline: !data.success,
+                new_captcha: data.new_captcha,
+                width: '100%'
+            }, handler);
+        }
+    });
+</script>
+
+<%- include("./common/footer.ejs") %>
+
+</body>
+</html>

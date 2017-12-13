@@ -1,0 +1,95 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>我的清单</title>
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/inventory.css">
+    <script src="js/jquery-3.2.1.min.js"></script>
+</head>
+<body>
+<%- include("./common/header.ejs") %>
+
+<div class="main clearfix">
+    <div class="nav">
+        <a class="my_collection active" href="/subcriberlist">
+            <div class="icon"></div>
+            <span>我的订阅</span>
+        </a>
+        <a class="my_share" href="/watchedlist">
+            <div class="icon"></div>
+            <span>我的分享</span>
+        </a>
+    </div>
+    <div class="content">
+        <div class="header">
+            <div class="bg">
+                <div class="header_title">我的清单</div>
+            </div>
+            <div class="icon">
+                <div class="icon_box">
+                    <div class="icon_mask"></div>
+                    <img src="img/img_user_bg.png">
+                    <div class="icon_logo"></div>
+                </div>
+            </div>
+            <div class="user">
+                <div class="avatar">
+                    <img src="img/unlogin.png" alt="">
+                </div>
+                <span class="user_name">未登录</span>
+			</span>
+            </div>
+        </div>
+
+        <div class="panel clearfix">
+            <div class="card_list">
+                <div class="list_header">
+                    <span class="list_title">0条记录</span>
+                    <a href="" class="inventory_btn">
+                        去订阅
+                        <div class="inventory_icon"></div>
+                    </a>
+                </div>
+                <div class="list_content">
+                    <div class="list_none">
+                        <div class="icon"></div>
+                        <div class="list_none_content">
+                            <p>当你有订阅或分享的乐谱时，你会在此看到它。</p>
+                            <a class="toLoginBtn" href="javascript:void(0)" onclick="showLoginWindow()">登录</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="list_footer"></div>
+            </div>
+
+            <div class="recommend">
+                <div class="recommend_header">
+                    最新推荐
+                    <a class="recommend_more" href="/category">
+                        更多
+                        <div class="recommend_icon"></div>
+                    </a>
+                </div>
+                <div class="recommend_content clearfix">
+                    <div class="recommend_card">
+                        <div class="recommend_img">
+                            <a href="/detail/fcbbcf3e9d9840bebcef131187d17960" target="_blank" rel="noreferrer">
+                                <img src="http://img.neets.cc/video/fcbbcf3e9d9840bebcef131187d17960/large.jpg" onerror="onError(this)">
+                            </a>
+                        </div>
+                        <div class="recommend_desc">
+                            <a class="recommend_desc_title" href="/detail/fcbbcf3e9d9840bebcef131187d17960" target="_blank" rel="noreferrer">卡片战斗先导者 GZ</a>
+                            <div class="recommend_desc_word">当你订阅的剧集更新时，你会在此看到它</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<%- include("./common/footer.ejs") %>
+
+</body>
+</html>
