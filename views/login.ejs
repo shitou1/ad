@@ -52,6 +52,7 @@
                     </a>
                 </div>
                 <div class="list_content">
+                    <div class="validate_message"></div>
                     <form class="form_login deactive">
                         <div class="form_row">
                             <label>用户名</label>
@@ -69,15 +70,15 @@
                     <form class="form_register">
                         <div class="form_row">
                             <label>用户名</label>
-                            <input type="text" name="name">
+                            <input type="text" name="name" id="registerName">
                         </div>
                         <div class="form_row">
                             <label>密码</label>
-                            <input type="password" name="password">
+                            <input type="password" name="password" id="registerPassword">
                         </div>
                         <div class="form_row">
                             <label>邮箱</label>
-                            <input type="text" name="email">
+                            <input type="text" name="email" id="registerEmail">
                         </div>
                         <div class="form_row">
                             <label>完成验证</label>
@@ -135,22 +136,39 @@
             if (!result) {
                 return alert('请完成验证');
             }
+
+            var $validateMessage = $('.validate_message');
+            var registerName = $('#registerName').val().trim();
+            if (registerName === '') {
+                return $validateMessage.value('用户名不能为空');
+            }
+            var registerPassword = $('#registerPassword').val().trim();
+            if (registerPassword === '') {
+                return $validateMessage.value('密码不能为空');
+            }
+            var registerEmail = $('#registerEmail').val().trim();
+            var emailPattern = /^[a-zA-Z0-9_-]+@[a-zA-Z0-9_-]+(\.[a-zA-Z0-9_-]+)+$/;
+            if (!emailPattern.test(registerEmail)) {
+                return $validateMessage.value('邮箱格式错误');
+            }
+
             $.ajax({
                 url: '/login/gt/validate-click',
                 type: 'POST',
                 dataType: 'json',
                 data: {
-                    username: 'shitou',
-                    password: '123456',
+                    username: registerName,
+                    password: registerPassword,
+                    email: registerEmail,
                     geetest_challenge: result.geetest_challenge,
                     geetest_validate: result.geetest_validate,
                     geetest_seccode: result.geetest_seccode
                 },
                 success: function (data) {
                     if (data.status === 'success') {
-                        alert('登录成功');
+                        alert(data.info);
                     } else if (data.status === 'fail') {
-                        alert('登录失败，请完成验证');
+                        alert(data.info);
                         captchaObj.reset();
                     }
                 }

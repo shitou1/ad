@@ -1,6 +1,8 @@
 var express = require('express');
 var Geetest = require('gt3-sdk/gt-sdk');
 var router = express.Router();
+var sha1 = require('sha1');
+var User = require('../models/user');
 
 // 验证码初始化
 var captcha = new Geetest({
@@ -48,13 +50,48 @@ router.post("/gt/validate-click", function (req, res) {
             // 二次验证失败
             res.send({
                 status: "fail",
-                info: '登录失败'
+                info: '注册失败'
             });
         } else {
+            // 验证用户名是否重复
+            User.findOne({'username': req.body.username}, function (err, user) {
+                var responseData = {};
 
-            res.send({
-                status: "success",
-                info: '登录成功'
+                if (err) {
+                    responseData = {
+                        status: "fail",
+                        info: err
+                    };
+                    return res.send(responseData);
+                }
+                if (user) {
+                    responseData = {
+                        status: "fail",
+                        info: '用户名已存在'
+                    };
+                    return res.send(responseData);
+                } else {
+                    var user = new User({
+                        username:  req.body.username,
+                        password: sha1(req.body.password),
+                        email: req.body.email
+                    });
+                    user.save(function (err) {
+                        if (err) {
+                            responseData = {
+                                status: "fail",
+                                info: err
+                            };
+                        } else {
+                            responseData = {
+                                status: "success",
+                                info: '注册成功'
+                            };
+                            req.session.user = req.body.username;
+                        }
+                        return res.send(responseData);
+                    });
+                }
             });
         }
     });

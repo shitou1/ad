@@ -14,6 +14,7 @@
     "express": "^4.16.2",
     "express-session": "^1.15.6",
     "gt3-sdk": "^2.0.0",
-    "mongoose": "^4.12.4"
+    "mongoose": "^4.12.4",
+    "sha1": "^1.1.1"
   }
 }
