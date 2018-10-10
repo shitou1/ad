@@ -5,6 +5,8 @@ var router = require('./routes/index');
 var mongoose = require('mongoose');
 var session = require('express-session');
 
+
+增加一行修改
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(session({
