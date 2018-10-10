@@ -8,7 +8,7 @@ var session = require('express-session');
 
 增加一行修改
 app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({extended: true}));
+app.use(bodyParser.urlencoded({extended: false}));
 app.use(session({
     secret: 'my-secret',
     resave: false,
