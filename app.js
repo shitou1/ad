@@ -12,7 +12,8 @@ app.use(session({
     resave: false,
     saveUninitialized: true
 }));
-
+再增加一行
+再再再次追加修改
 // 数据库配置
 mongoose.connect('mongodb://localhost/ad', { useMongoClient: true });
 mongoose.Promise = global.Promise;
@@ -35,5 +36,4 @@ var server = app.listen(3000, function () {
 
     console.log('Example app listening at http://%s:%s', host, port);
 });
-
-你好吗，天气好吗？
+mast分支也修改一下
