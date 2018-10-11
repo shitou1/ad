@@ -5,8 +5,10 @@ var router = require('./routes/index');
 var mongoose = require('mongoose');
 var session = require('express-session');
 
+
+增加一行dededeFFFFF修改
 app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({extended: true}));
+app.use(bodyParser.urlencoded({extended: false}));
 app.use(session({
     secret: 'my-secret',
     resave: false,
@@ -34,3 +36,5 @@ var server = app.listen(3000, function () {
     var port = server.address().port;
     console.log('Example app listening at http://%s:%s', host, port);
 });
+
+cherry-pick 修改app.js
